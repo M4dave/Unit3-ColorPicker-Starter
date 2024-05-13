@@ -15,7 +15,6 @@ const App = () => {
       <div id="colors-list">
         <Color color="red" setSelectedColor={setSelectedColor} />
         <Color color="blue" setSelectedColor={setSelectedColor} />
-        <Color color="blue" setSelectedColor={setSelectedColor} />
         <Color color="violet" setSelectedColor={setSelectedColor} />
       </div>
     </div>
