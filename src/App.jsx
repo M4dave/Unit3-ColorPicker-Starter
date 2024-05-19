@@ -1,7 +1,18 @@
 import { useState } from "react";
 
-const Color = ({ color, setSelectedColor }) => {
-  return <div className={color} onClick={() => setSelectedColor(color)}></div>;
+// Compare the "selectedColor" on state to the "color" prop that each Color receives.
+// If they match, the Color should have a border around it.
+
+const Color = ({ color, setSelectedColor, selectedColor }) => {
+  return (
+    <div>
+      <div
+        className={color}
+        onClick={() => setSelectedColor(color)}
+        style={{ border: color === selectedColor ? "solid 3px black" : "none" }}
+      ></div>
+    </div>
+  );
 };
 
 const App = () => {
@@ -13,9 +24,21 @@ const App = () => {
         <div className={selectedColor}>{selectedColor}</div>
       </div>
       <div id="colors-list">
-        <Color color="red" setSelectedColor={setSelectedColor} />
-        <Color color="blue" setSelectedColor={setSelectedColor} />
-        <Color color="violet" setSelectedColor={setSelectedColor} />
+        <Color
+          color="red"
+          selectedColor={selectedColor}
+          setSelectedColor={setSelectedColor}
+        />
+        <Color
+          color="blue"
+          selectedColor={selectedColor}
+          setSelectedColor={setSelectedColor}
+        />
+        <Color
+          color="violet"
+          selectedColor={selectedColor}
+          setSelectedColor={setSelectedColor}
+        />
       </div>
     </div>
   );
